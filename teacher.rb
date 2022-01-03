@@ -1,7 +1,8 @@
 require_relative 'person.rb'
 
 class Teacher < Person
-  def initialize(specialization)
+  def initialize(name, parent_permission, age, specialization)
+    super(name, parent_permission, age)
     @specialization = specialization
   end
 
