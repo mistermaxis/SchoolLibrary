@@ -1,5 +1,5 @@
 class Person
-  def initialize(name = "unknown", parent_permission = false, age)
+  def initialize(age, name = "unknown", parent_permission: false)
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -11,9 +11,9 @@ class Person
 
   def is_of_age?
     if @age >= 18
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
@@ -26,5 +26,4 @@ class Person
   end
 
   private :is_of_age?
-
 end
