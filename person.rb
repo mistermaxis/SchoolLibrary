@@ -9,11 +9,7 @@ class Person
   attr_reader :id
 
   def of_age?
-    if @age >= 18
-      true
-    else
-      false
-    end
+    @age >= 18
   end
 
   def can_use_services?
