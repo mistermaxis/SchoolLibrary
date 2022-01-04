@@ -1,10 +1,5 @@
 require_relative 'person'
-require_relative 'student'
 
-p = Person.new 'Me', false, 42
+p = Person.new 42, 'maximiliano', false
 
-s = Student.new 'S', false, 15, 'Room 5'
-
-puts p.can_use_services?
-
-puts s.play_hooky
+puts p.name
