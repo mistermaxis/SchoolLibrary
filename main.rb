@@ -6,4 +6,5 @@ p = Person.new 25, 'Argyle', parent_permission: false
 b = Book.new 'My grandma', 'Shakespeare'
 r = Rental.new '22-01-20', b, p
 
-p.rentals.each { |r| puts r.book.author }
+puts r.date
+p.rentals.each { |x| puts x.book.author }
