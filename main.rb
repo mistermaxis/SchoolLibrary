@@ -1,5 +1,7 @@
-require_relative 'person'
+require_relative 'classroom'
+require_relative 'student'
 
-p = Person.new 42, 'maximiliano'
+c = Classroom.new 'Math'
+s = Student.new 'John', 10, c
 
-puts p.name
+puts s.classroom.label
