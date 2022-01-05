@@ -4,7 +4,7 @@
 
 > An app for a school library.
 
-## Built With Love
+## Built
 
 - Ruby
 - VSCode
