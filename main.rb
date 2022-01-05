@@ -1,7 +1,9 @@
-require_relative 'classroom'
-require_relative 'student'
+require_relative 'person'
+require_relative 'book'
+require_relative 'rental'
 
-c = Classroom.new 'Math'
-s = Student.new 'John', 10, c
+p = Person.new 25, 'Argyle', parent_permission: false
+b = Book.new 'My grandma', 'Shakespeare'
+r = Rental.new '22-01-20', b, p
 
-puts s.classroom.label
+p.rentals.each { |r| puts r.book.author }
