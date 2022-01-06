@@ -28,4 +28,4 @@ def main
   school_library.display_books
 end
 
-main()
+main
