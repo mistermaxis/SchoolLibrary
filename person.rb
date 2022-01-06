@@ -3,15 +3,12 @@ require_relative 'corrector'
 class Person
   def initialize(age, name = 'unknown', parent_permission: false)
     @age = age
-    @id = @@id_count
     @parent_permission = parent_permission
     @corrector = Corrector.new
     validate_name(name)
     @rentals = []
-    @@id_count += 1
   end
 
-  @@id_count = 0
   attr_accessor :name, :age, :rentals
   attr_reader :id
 
