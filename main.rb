@@ -8,7 +8,7 @@ class App
     @book_list = [Book.new('yes', 'no'), Book.new('maybe', 'yes')]
     @people_list = []
     @options = {
-      1 => self.display_books()
+      1 => display_books
     }
   end
   attr_reader :options
@@ -25,8 +25,7 @@ def main
 5 - Create a rental
 6 - List all rentals for a given person id
 7 - Exit\n"
-  choice = gets.chomp
-  school_library.display_books()
+  school_library.display_books
 end
 
 main()
