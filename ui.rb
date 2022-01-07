@@ -27,6 +27,10 @@ class UI
           self.display_people
         when '3'
           self.create_person
+        when '4'
+          self.create_book
+        else
+          print "Invalid choice\n"
         end
     end
   end

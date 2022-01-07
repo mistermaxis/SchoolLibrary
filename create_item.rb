@@ -26,9 +26,17 @@ module CreateItem
       print "Specialization: "
       s = gets.chomp
       @people_list.push(Teacher.new(n, @people_list.length, true, a, s))
-      puts 'Person created succesfully.'
+      puts 'Person created successfully.'
     else
       p 'Invalid Choice'
     end
+  end
+  def create_book
+    print "Title: "
+    t = gets.chomp
+    print "Author: "
+    a = gets.chomp
+    @book_list.push(Book.new(t, a))
+    puts "Book created successfully\n"
   end
 end
