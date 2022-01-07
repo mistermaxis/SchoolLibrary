@@ -1,5 +1,3 @@
-require_relative 'person'
-require_relative 'book'
 require_relative 'display_list'
 require_relative 'create_item'
 
