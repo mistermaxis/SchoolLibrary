@@ -28,23 +28,54 @@ class UI
   end
 
   def handle_input
-    case @input
-    when '1'
+    handle_1
+    handle_2
+    handle_3
+    handle_4
+    handle_5
+    handle_6
+    invalid
+  end
+
+  def handle_1
+    if @input == '1'
       display_books
-    when '2'
+    end
+  end
+
+  def handle_2
+    if @input == '2'
       display_people
-    when '3'
+    end
+  end
+
+  def handle_3
+    if @input == '3'
       create_person
-    when '4'
+    end
+  end
+
+  def handle_4
+    if @input == '4'
       create_book
-    when '5'
+    end
+  end
+
+  def handle_5
+    if @input == '5'
       create_rental
-    when '6'
+    end
+  end
+
+  def handle_6
+    if @input == '6'
       display_rentals
-    when '7'
-      print ''
-    else
-      print "Invalid choice\n"
+    end
+  end
+
+  def invalid
+    unless @input.to_i > 0 && @input.to_i <= 7
+      puts 'Invalid choice'
     end
   end
 end
