@@ -1,10 +1,16 @@
-require_relative 'person'
-require_relative 'book'
-require_relative 'rental'
+require_relative 'ui'
 
-p = Person.new 25, 'Argyle', parent_permission: false
-b = Book.new 'My grandma', 'Shakespeare'
-r = b.add_rental('20-12-2020', p)
+class App
+  attr_reader :app_ui
 
-puts r.date
-p.rentals.each { |x| puts x.book.author }
+  def initialize
+    @app_ui = UI.new
+  end
+end
+
+def main
+  app = App.new
+  app.app_ui.display_ui
+end
+
+main

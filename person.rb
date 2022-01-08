@@ -1,8 +1,9 @@
 require_relative 'corrector'
 
 class Person
-  def initialize(age, name = 'unknown', parent_permission: false)
+  def initialize(age, id, name = 'unknown', parent_permission: false)
     @age = age
+    @id = id
     @parent_permission = parent_permission
     @corrector = Corrector.new
     validate_name(name)
