@@ -46,7 +46,7 @@ module CreateItem
     a = gets.chomp
     print 'Name: '
     n = gets.chomp
-    print "Has parent permission[Y/N]: "
+    print 'Has parent permission[Y/N]: '
     pp = gets.chomp
     p = pp == 'N'
     @people_list.push(Student.new(n, @people_list.length, a, parent_permission: p))
@@ -61,6 +61,6 @@ module CreateItem
     print 'Specialization: '
     s = gets.chomp
     @people_list.push(Teacher.new(n, @people_list.length, true, a, s))
-    puts 'Person created successfully.' 
+    puts 'Person created successfully.'
   end
 end
