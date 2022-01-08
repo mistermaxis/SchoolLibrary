@@ -62,8 +62,6 @@ class UI
   end
 
   def invalid
-    unless @input.to_i > 0 && @input.to_i <= 7
-      puts 'Invalid choice'
-    end
+    puts 'Invalid choice' unless @input.to_i.positive? && @input.to_i <= 7
   end
 end
