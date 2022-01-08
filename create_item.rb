@@ -11,14 +11,14 @@ module CreateItem
 
     case person_type
     when '1'
-      create_student      
+      create_student
     when '2'
-      create_teacher   
+      create_teacher
     else
       p 'Invalid Choice'
     end
   end
-  
+
   def create_book
     print 'Title: '
     t = gets.chomp
@@ -33,7 +33,7 @@ module CreateItem
     @book_list.each { |book| puts "#{@book_list.index(book)}\) Title: #{book.title}, Author: #{book.author}" }
     b = gets.chomp
     puts 'Select a person from the following list by number (not id):'
-    @people_list.each { |person| puts "#{@people_list.index(person)}\) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}" }
+    @people_list.each { |i| puts "#{@people_list.index(i)}\) [#{i.class}] Name: #{i.name}, ID: #{i.id} Age: #{i.age}" }
     r = gets.chomp
     print 'Date: '
     d = gets.chomp
