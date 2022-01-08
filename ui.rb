@@ -22,17 +22,17 @@ class UI
         @input = gets.chomp
         case @input
         when '1'
-          self.display_books
+          display_books
         when '2'
-          self.display_people
+          display_people
         when '3'
-          self.create_person
+          create_person
         when '4'
-          self.create_book
+          create_book
         when '5'
-          self.create_rental
+          create_rental
         when '6'
-          self.display_rentals
+          display_rentals
         when '7'
           break
         else
