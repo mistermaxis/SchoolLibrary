@@ -28,7 +28,7 @@ class UI
   end
 
   def handle_input
-    handle_1
+    handle1
     handle_2
     handle_3
     handle_4
@@ -37,10 +37,8 @@ class UI
     invalid
   end
 
-  def handle_1
-    if @input == '1'
-      display_books
-    end
+  def handle1
+    display_books if @input == '1'
   end
 
   def handle_2
