@@ -1,6 +1,8 @@
 require_relative 'person'
 require_relative 'book'
+require_relative 'student'
 require_relative 'teacher'
+require_relative 'rental'
 
 module CreateItem
   def create_person
@@ -16,7 +18,7 @@ module CreateItem
       print "Has parent permission[Y/N]: "
       pp = gets.chomp
       p = pp == 'N' || pp == 'Y'
-      @people_list.push(Student.new(a, @people_list.length, n, parent_permission: p))
+      @people_list.push(Student.new(n, @people_list.length, a, parent_permission: p))
       puts "Person created succesfully.\n"
     when '2'
       print "Age: "
@@ -38,5 +40,17 @@ module CreateItem
     a = gets.chomp
     @book_list.push(Book.new(t, a))
     puts "Book created successfully\n"
+  end
+  def create_rental
+    puts 'Select a book from the following list by number:'
+    @book_list.each { |book| puts "#{@book_list.index(book)}\) Title: #{book.title}, Author: #{book.author}" }
+    b = gets.chomp
+    puts 'Select a person from the following list by number (not id):'
+    @people_list.each { |person| puts "#{@people_list.index(person)}\) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}" }
+    r = gets.chomp
+    print "Date: "
+    d = gets.chomp
+    Rental.new(d, @book_list[b.to_i], @people_list[r.to_i])
+    puts "Rental created successfully\n"
   end
 end

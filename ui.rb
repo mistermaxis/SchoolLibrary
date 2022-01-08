@@ -29,6 +29,12 @@ class UI
           self.create_person
         when '4'
           self.create_book
+        when '5'
+          self.create_rental
+        when '6'
+          self.display_rentals
+        when '7'
+          break
         else
           print "Invalid choice\n"
         end
