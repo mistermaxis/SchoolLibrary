@@ -11,28 +11,14 @@ module CreateItem
 
     case person_type
     when '1'
-      print "Age: "
-      a = gets.chomp
-      print "Name: "
-      n = gets.chomp
-      print 'Has parent permission[Y/N]: '
-      pp = gets.chomp
-      p = pp == 'N' || pp == 'Y'
-      @people_list.push(Student.new(n, @people_list.length, a, parent_permission: p))
-      puts 'Person created succesfully.\n'
+      create_student      
     when '2'
-      print 'Age: '
-      a = gets.chomp
-      print 'Name: '
-      n = gets.chomp
-      print 'Specialization: '
-      s = gets.chomp
-      @people_list.push(Teacher.new(n, @people_list.length, true, a, s))
-      puts 'Person created successfully.'
+      create_teacher   
     else
       p 'Invalid Choice'
     end
   end
+  
   def create_book
     print 'Title: '
     t = gets.chomp
@@ -41,6 +27,7 @@ module CreateItem
     @book_list.push(Book.new(t, a))
     puts 'Book created successfully\n'
   end
+
   def create_rental
     puts 'Select a book from the following list by number:'
     @book_list.each { |book| puts "#{@book_list.index(book)}\) Title: #{book.title}, Author: #{book.author}" }
@@ -52,5 +39,28 @@ module CreateItem
     d = gets.chomp
     Rental.new(d, @book_list[b.to_i], @people_list[r.to_i])
     puts 'Rental created successfully\n'
+  end
+
+  def create_student
+    print 'Age: '
+    a = gets.chomp
+    print 'Name: '
+    n = gets.chomp
+    print "Has parent permission[Y/N]: "
+    pp = gets.chomp
+    p = pp == 'N'
+    @people_list.push(Student.new(n, @people_list.length, a, parent_permission: p))
+    puts "Person created succesfully.\n"
+  end
+
+  def create_teacher
+    print 'Age: '
+    a = gets.chomp
+    print 'Name: '
+    n = gets.chomp
+    print 'Specialization: '
+    s = gets.chomp
+    @people_list.push(Teacher.new(n, @people_list.length, true, a, s))
+    puts 'Person created successfully.' 
   end
 end

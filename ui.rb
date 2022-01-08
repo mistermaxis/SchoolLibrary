@@ -9,7 +9,7 @@ class UI
     @input = ''
   end
   def display_ui
-    while @input != '7' do
+    while @input != '7'
         puts "Welcome to School Library App!\n\n"
         puts 'Please choose an option by enterin a number:'
         puts '1 - List all books'
