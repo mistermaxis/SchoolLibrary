@@ -29,11 +29,11 @@ class UI
 
   def handle_input
     handle1
-    handle_2
-    handle_3
-    handle_4
-    handle_5
-    handle_6
+    handle2
+    handle3
+    handle4
+    handle5
+    handle6
     invalid
   end
 
@@ -41,34 +41,24 @@ class UI
     display_books if @input == '1'
   end
 
-  def handle_2
-    if @input == '2'
-      display_people
-    end
+  def handle2
+    display_people if @input == '2'
   end
 
-  def handle_3
-    if @input == '3'
-      create_person
-    end
+  def handle3
+    create_person if @input == '3'
   end
 
-  def handle_4
-    if @input == '4'
-      create_book
-    end
+  def handle4
+    create_book if @input == '4'
   end
 
-  def handle_5
-    if @input == '5'
-      create_rental
-    end
+  def handle5
+    create_rental if @input == '5'
   end
 
-  def handle_6
-    if @input == '6'
-      display_rentals
-    end
+  def handle6
+    display_rentals if @input == '6'
   end
 
   def invalid
