@@ -4,7 +4,7 @@
 
 > An app to manage a school library.
 
-## Built
+## Built using
 
 - Ruby
 - VSCode
