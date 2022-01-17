@@ -37,7 +37,7 @@ module CreateItem
     person_index = gets.chomp
     print 'Date: '
     date = gets.chomp
-    Rental.new(d, @book_list[book_index.to_i], @people_list[person_index.to_i])
+    Rental.new(date, @book_list[book_index.to_i], @people_list[person_index.to_i])
     puts 'Rental created successfully\n'
   end
 
@@ -48,7 +48,7 @@ module CreateItem
     name = gets.chomp
     print 'Has parent permission[Y/N]: '
     has_parent_permission = gets.chomp
-    parent_permission = pp == 'N'
+    parent_permission = has_parent_permission == 'N'
     @people_list.push(Student.new(name, @people_list.length, age, parent_permission: parent_permission))
     puts "Person created succesfully.\n"
   end
