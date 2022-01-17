@@ -21,46 +21,46 @@ module CreateItem
 
   def create_book
     print 'Title: '
-    t = gets.chomp
+    title = gets.chomp
     print 'Author: '
-    a = gets.chomp
-    @book_list.push(Book.new(t, a))
+    author = gets.chomp
+    @book_list.push(Book.new(title, author))
     puts 'Book created successfully\n'
   end
 
   def create_rental
     puts 'Select a book from the following list by number:'
     @book_list.each { |book| puts "#{@book_list.index(book)}\) Title: #{book.title}, Author: #{book.author}" }
-    b = gets.chomp
+    book_index = gets.chomp
     puts 'Select a person from the following list by number (not id):'
     @people_list.each { |i| puts "#{@people_list.index(i)}\) [#{i.class}] Name: #{i.name}, ID: #{i.id} Age: #{i.age}" }
-    r = gets.chomp
+    person_index = gets.chomp
     print 'Date: '
-    d = gets.chomp
-    Rental.new(d, @book_list[b.to_i], @people_list[r.to_i])
+    date = gets.chomp
+    Rental.new(d, @book_list[book_index.to_i], @people_list[person_index.to_i])
     puts 'Rental created successfully\n'
   end
 
   def create_student
     print 'Age: '
-    a = gets.chomp
+    age = gets.chomp
     print 'Name: '
-    n = gets.chomp
+    name = gets.chomp
     print 'Has parent permission[Y/N]: '
-    pp = gets.chomp
-    p = pp == 'N'
-    @people_list.push(Student.new(n, @people_list.length, a, parent_permission: p))
+    has_parent_permission = gets.chomp
+    parent_permission = pp == 'N'
+    @people_list.push(Student.new(name, @people_list.length, age, parent_permission: parent_permission))
     puts "Person created succesfully.\n"
   end
 
   def create_teacher
     print 'Age: '
-    a = gets.chomp
+    age = gets.chomp
     print 'Name: '
-    n = gets.chomp
+    name = gets.chomp
     print 'Specialization: '
-    s = gets.chomp
-    @people_list.push(Teacher.new(n, @people_list.length, true, a, s))
+    specialization = gets.chomp
+    @people_list.push(Teacher.new(name, @people_list.length, true, age, specialization))
     puts 'Person created successfully.'
   end
 end
