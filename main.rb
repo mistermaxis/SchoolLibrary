@@ -1,4 +1,4 @@
-require_relative 'ui'
+require_relative 'src/ui'
 
 class App
   attr_reader :app_ui
