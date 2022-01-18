@@ -2,7 +2,7 @@ require 'json'
 
 module LoadList
   def load_books
-    if File.exists("JSON/books.json")
+    if File.exist?("JSON/books.json")
       books = File.open("JSON/books.json").read
       books_data = JSON.parse(books, create_additions: true)
       @book_list = books_data
