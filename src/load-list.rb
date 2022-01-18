@@ -7,9 +7,14 @@ module LoadList
     @book_list = books_data
   end
   def load_people
-    # File.write("JSON/people.json", JSON.parse(@people_list))
+    people = File.open("JSON/people.json").read
+    people_data = JSON.parse(people, create_additions: true)
+    people_data.each { |prs| @people_list.push(prs) }
   end
   def load_rentals
-    # File.write("JSON/rentals.json", JSON.parse(@rental_list))
+    rentals = File.open("JSON/rentals.json").read
+    # rentals_data = JSON.parse(rentals, create_additions: true)
+    # puts rentals_data
+    # @rental_list = rentals_data
   end
 end

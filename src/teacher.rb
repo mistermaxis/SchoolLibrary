@@ -18,4 +18,8 @@ class Teacher < Person
     'a'             => [ name, id, age, specialization ]
   }.to_json(*args)
   end
+
+  def self.json_create(object)
+    new(*object['a'])
+  end
 end
