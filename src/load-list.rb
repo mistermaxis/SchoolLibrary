@@ -13,8 +13,7 @@ module LoadList
   end
   def load_rentals
     rentals = File.open("JSON/rentals.json").read
-    # rentals_data = JSON.parse(rentals, create_additions: true)
-    # puts rentals_data
-    # @rental_list = rentals_data
+    rentals_data = JSON.parse(rentals, create_additions: true)
+    rentals_data.each { |rnt| @rental_list.push(rnt) }
   end
 end

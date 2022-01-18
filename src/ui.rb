@@ -16,6 +16,7 @@ class UI
     @input = ''
     load_books
     load_people
+    load_rentals
   end
 
   def display_ui
@@ -73,7 +74,7 @@ class UI
     if @input == '7'
       persist_books
       persist_people
-      git persist_rentals
+      # persist_rentals
     end
   end
 
