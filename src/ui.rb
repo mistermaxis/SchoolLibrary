@@ -1,7 +1,7 @@
 require_relative 'display_list'
 require_relative 'create_item'
 require_relative 'persist-list'
-require_relative 'load-list'
+require_relative 'load_list'
 
 class UI
   include DisplayList
