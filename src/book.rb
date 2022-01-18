@@ -16,4 +16,8 @@ class Book
       'a'             => [ title, author ]
     }.to_json(*args)
   end
+
+  def self.json_create(object)
+    new(*object['a'])
+  end
 end

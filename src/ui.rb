@@ -1,17 +1,20 @@
 require_relative 'display_list'
 require_relative 'create_item'
 require_relative 'persist-list'
+require_relative 'load-list'
 
 class UI
   include DisplayList
   include PersistList
   include CreateItem
+  include LoadList
 
   def initialize
-    @book_list = [Book.new('gi', 'hud')]
+    @book_list = []
     @people_list = []
     @rental_list = []
     @input = ''
+    load_books
   end
 
   def display_ui
