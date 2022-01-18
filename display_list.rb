@@ -14,9 +14,8 @@ module DisplayList
   def display_rentals
     print "\nID of person: "
     id = gets.chomp
-    person = @people_list[id.to_i]
     puts "\nRentals:"
-    person.rentals.each { |rental| puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" }
+    @rental_list.each { |r| puts "Date: #{r.date}, Book: \"#{r.book.title}\" by #{r.book.author}" if r.person.id == id.to_i }
     puts
   end
 end
