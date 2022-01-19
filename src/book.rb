@@ -6,10 +6,6 @@ class Book
     @author = author
   end
 
-  def add_rental(date, person)
-    Rental.new(date, self, person)
-  end
-
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
