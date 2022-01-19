@@ -1,12 +1,15 @@
-require_relative 'src/book.rb'
+# frozen_string_literal: true
 
-describe Book do 
-   context "When testing the HelloWorld class" do 
-      
-      it "should say 'Hello World' when we call the say_hello method" do 
-         book = Book.new 
-         message = book.add_rental 
-         expect(message).to eq "Hello World!"
-      end
-   end
+require_relative '../src/book'
+
+describe Book do
+  context 'When testing the Book class' do
+    it "should return a new Book instance with the supplied title and author" do
+      book = Book.new('The Lord', 'D. Trump')
+      title = book.title
+      author = book.author
+      expect(title).to eq 'The Lord'
+      expect(author).to eq 'D. Trump'
+    end
+  end
 end
