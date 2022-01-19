@@ -22,10 +22,10 @@ class Student < Person
   end
 
   def to_json(*args)
-  {
-    JSON.create_id  => self.class.name,
-    'a'             => [ name, id, age, parent_permission ]
-  }.to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'a' => [name, id, age, parent_permission]
+    }.to_json(*args)
   end
 
   def self.json_create(object)
