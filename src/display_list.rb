@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DisplayList
   def display_books
     puts
