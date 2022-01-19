@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../src/book'
 require_relative '../src/student'
 require_relative '../src/rental'

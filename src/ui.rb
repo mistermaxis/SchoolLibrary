@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'display_list'
 require_relative 'create_item'
 require_relative 'persist_list'
