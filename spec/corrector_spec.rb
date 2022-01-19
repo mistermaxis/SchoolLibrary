@@ -2,7 +2,7 @@ require_relative '../src/corrector'
 
 describe Corrector do
   context 'When testing the Corrector class' do
-    it "should correct a string" do
+    it "should correct a name" do
       lc_name = 'max'
       long_name = 'Maximiliano'
       corrector = Corrector.new
