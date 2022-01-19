@@ -13,5 +13,10 @@ describe Student do
       expect(age).to eq 23
       expect(parent_permission).to eq false
     end
+
+    it "should diplay the appropriate message" do
+      student = Student.new('Billy', 777, 23, false)
+      expect(student.play_hooky).to eq '¯\\(ツ)/¯'
+    end
   end
 end
