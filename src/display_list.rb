@@ -15,10 +15,11 @@ module DisplayList
     print "\nID of person: "
     id = gets.chomp
     puts "\nRentals:"
-    @rental_list.each |r| if r.person.id == id.to_i
-            print "Date: #{r.date} "
-            print "Book: \"#{r.book.title}\" by #{r.book.author}\n"
-          end
-    puts
+    @rental_list.each do |r|
+      if r.person.id == id.to_i
+        print "Date: #{r.date} "
+        print "Book: \"#{r.book.title}\" by #{r.book.author}\n\n"
+      end
+    end
   end
 end
