@@ -76,7 +76,6 @@ class UI
     persist_books
     persist_people
     persist_rentals
-
   end
 
   def invalid
