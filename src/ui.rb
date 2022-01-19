@@ -72,11 +72,11 @@ class UI
 
   def handle7
     return unless @input == '7'
+
+    persist_books
+    persist_people
+    persist_rentals
     
-      persist_books
-      persist_people
-      persist_rentals
-    end
   end
 
   def invalid
