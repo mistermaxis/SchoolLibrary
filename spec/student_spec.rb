@@ -3,7 +3,7 @@ require_relative '../src/student'
 describe Student do
   context 'When testing the Student class' do
     it 'should return a new Student instance with the supplied name, age and permission' do
-      student = Student.new('Billy', 777, 23, false)
+      student = Student.new('Billy', 777, 23, true)
       name = student.name
       id = student.id
       age = student.age
@@ -11,7 +11,7 @@ describe Student do
       expect(name).to eq 'Billy'
       expect(id).to eq 777
       expect(age).to eq 23
-      expect(parent_permission).to eq false
+      expect(parent_permission).to eq true
     end
 
     it 'should diplay the appropriate message' do
