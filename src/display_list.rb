@@ -13,10 +13,13 @@ module DisplayList
 
   def display_rentals
     print "\nID of person: "
-    i = gets.chomp
-    u = @people_list[i.to_i]
+    id = gets.chomp
     puts "\nRentals:"
-    u.rentals.each { |rental| puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" }
-    puts
+    @rental_list.each do |r|
+      if r.person.id == id.to_i
+        print "Date: #{r.date} "
+        print "Book: \"#{r.book.title}\" by #{r.book.author}\n\n"
+      end
+    end
   end
 end

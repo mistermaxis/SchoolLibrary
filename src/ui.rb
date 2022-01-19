@@ -1,14 +1,22 @@
 require_relative 'display_list'
 require_relative 'create_item'
+require_relative 'persist_list'
+require_relative 'load_list'
 
 class UI
   include DisplayList
+  include PersistList
   include CreateItem
+  include LoadList
 
   def initialize
     @book_list = []
     @people_list = []
+    @rental_list = []
     @input = ''
+    load_books
+    load_people
+    load_rentals
   end
 
   def display_ui
@@ -34,6 +42,7 @@ class UI
     handle4
     handle5
     handle6
+    handle7
     invalid
   end
 
@@ -59,6 +68,14 @@ class UI
 
   def handle6
     display_rentals if @input == '6'
+  end
+
+  def handle7
+    return unless @input == '7'
+
+    persist_books
+    persist_people
+    persist_rentals
   end
 
   def invalid

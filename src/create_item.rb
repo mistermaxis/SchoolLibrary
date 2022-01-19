@@ -37,7 +37,8 @@ module CreateItem
     person_index = gets.chomp
     print 'Date: '
     date = gets.chomp
-    Rental.new(date, @book_list[book_index.to_i], @people_list[person_index.to_i])
+    new_rental = Rental.new(date, @book_list[book_index.to_i], @people_list[person_index.to_i])
+    @rental_list.push(new_rental)
     puts "Rental created successfully\n"
   end
 
@@ -60,7 +61,7 @@ module CreateItem
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    @people_list.push(Teacher.new(name, @people_list.length, true, age, specialization))
+    @people_list.push(Teacher.new(name, @people_list.length, age, specialization))
     puts 'Person created successfully.'
   end
 end
