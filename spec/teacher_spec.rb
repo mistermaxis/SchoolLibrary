@@ -2,7 +2,7 @@ require_relative '../src/teacher'
 
 describe Teacher do
   context 'When testing the Teacher class' do
-    it "should return a new Teacher instance with the supplied name, age and permission" do
+    it "should return a new Teacher instance with the supplied name, age and specialization" do
       teacher = Teacher.new('Sandra', 777, 65, 'Math')
       name = teacher.name
       id = teacher.id
